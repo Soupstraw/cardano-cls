@@ -69,17 +69,17 @@
     "cips": {
       "flake": false,
       "locked": {
-        "lastModified": 1778152917,
-        "narHash": "sha256-DhrwT5qnmmZyHV+0QT4oAcgTw35SJZILrJ/2ViDxlvs=",
+        "lastModified": 1778663000,
+        "narHash": "sha256-Oa5Jt6NXXf61BP5+N+LlF4cR8rSaSU2hX+nKfZ4JHhM=",
         "owner": "tweag",
         "repo": "CIPs",
-        "rev": "d92300f9cf14f94a2bfab334e55a76cdf451fe8b",
+        "rev": "8b1b619bef7e11b37f21e2b39f3159ea5d48af23",
         "type": "github"
       },
       "original": {
         "owner": "tweag",
         "repo": "CIPs",
-        "rev": "d92300f9cf14f94a2bfab334e55a76cdf451fe8b",
+        "rev": "8b1b619bef7e11b37f21e2b39f3159ea5d48af23",
         "type": "github"
       }
     },
