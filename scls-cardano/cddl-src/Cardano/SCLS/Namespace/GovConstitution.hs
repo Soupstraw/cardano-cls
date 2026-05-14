@@ -26,11 +26,13 @@ record_entry =
         |   - id: key
         |     type: gov_constitution
         |
-        | gov_constitution:
-        |   seq:
-        |     - id: epoch
-        |       doc: Current epoch.
-        |       type: u8
+        | types:
+        |   gov_constitution:
+        |     seq:
+        |       - id: singleton
+        |         doc: singleton key with value 0
+        |         type: u1
+        |.        valid: 0
         | ```
         |]
     $ "record_entry" =:= constitution

@@ -30,9 +30,10 @@ record_entry =
         | types:
         |   entities_committee:
         |     seq:
-        |       - id: epoch
-        |         doc: epoch
-        |         type: u8
+        |       - id: singleton
+        |         doc: singleton key with value 0
+        |         type: u1
+        |.        valid: 0
         | ```
         |]
     $ "record_entry" =:= committee_state
