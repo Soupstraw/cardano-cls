@@ -9,6 +9,7 @@ module Cardano.SCLS.CDDL (
 ) where
 
 import Cardano.SCLS.Namespace.Blocks qualified as Blocks
+import Cardano.SCLS.Namespace.EntitiesAccounts qualified as EntitiesAccounts
 import Cardano.SCLS.Namespace.EntitiesCommittee qualified as EntitiesCommittee
 import Cardano.SCLS.Namespace.EntitiesDReps qualified as EntitiesDReps
 import Cardano.SCLS.Namespace.EntitiesStakePools qualified as EntitiesStakePools
@@ -56,6 +57,9 @@ instance KnownSpec "snapshots/go/v0" where
 instance KnownSpec "nonces/v0" where
   namespaceSpec _ = mkDefinition Nonces.record_entry
 
+instance KnownSpec "entities/accounts/v0" where
+  namespaceSpec _ = mkDefinition EntitiesAccounts.record_entry
+
 instance KnownSpec "entities/committee/v0" where
   namespaceSpec _ = mkDefinition EntitiesCommittee.record_entry
 
@@ -98,6 +102,7 @@ knownNamespaces =
   , mkNamespaceSymbol @"snapshots/set/v0"
   , mkNamespaceSymbol @"snapshots/go/v0"
   , mkNamespaceSymbol @"nonces/v0"
+  , mkNamespaceSymbol @"entities/accounts/v0"
   , mkNamespaceSymbol @"entities/committee/v0"
   , mkNamespaceSymbol @"entities/dreps/v0"
   , mkNamespaceSymbol @"entities/stake_pools/v0"
@@ -115,6 +120,7 @@ type instance Spec.NamespaceKeySize "nonces/v0" = 1 -- Just zero
 type instance Spec.NamespaceKeySize "snapshots/mark/v0" = 31 -- 1 byte for hash type, 29 bytes for key hash (including 1-byte discriminator/padding; cred 29, key 28+1), 1 byte for value type
 type instance Spec.NamespaceKeySize "snapshots/set/v0" = 31 -- 1 byte for hash type, 29 bytes for key hash (including 1-byte discriminator/padding; cred 29, key 28+1), 1 byte for value type
 type instance Spec.NamespaceKeySize "snapshots/go/v0" = 31 -- 1 byte for hash type, 29 bytes for key hash (including 1-byte discriminator/padding; cred 29, key 28+1), 1 byte for value type
+type instance Spec.NamespaceKeySize "entities/accounts/v0" = 29 -- 1 byte for tag, 28 bytes for hash
 type instance Spec.NamespaceKeySize "entities/committee/v0" = 1 -- One-byte zero, as it's a singleton key
 type instance Spec.NamespaceKeySize "entities/dreps/v0" = 29 -- 1 byte for tag, 28 bytes for hash
 type instance Spec.NamespaceKeySize "entities/stake_pools/v0" = 28
